@@ -1,98 +1,152 @@
 <!DOCTYPE html>
-<html>
-	<head>
-        <title>Accessible Components</title>
-        <style>
-            img {
-                width: 70%; /* Adjusts the width */
-                height: auto; /* Maintains aspect ratio */
-            }
-            figure {
-                margin-bottom: 50px; /* Adjust the space between each figure */
-            }
-            .reflection {
-                width: 70%; /* Adjust the width of the reflection section */
-                margin-top: 30px;
-                font-size: 16px; /* Adjust the font size for readability */
-            }
-            /* Style for displaying images side by side */
-            .image-container {
-                display: flex;
-                gap: 20px; /* Space between images */
-                justify-content: center; /* Centering images */
-                align-items: center; /* Align images in the center */
-            }
-        </style>
-	</head>
-	<body>
-        <h1>"Exit the application" popup box in Minecraft, Photoshop, Word</h1>
-        <h4> Ruchi Ukhade CS1300</h4>
-        <h2>Part 1: Input</h2>
-        
-        <figure>
-            <img src="MinecraftPopUp.png" alt="Minecraft popup" width="300" />
-            <figcaption>Figure 1: Minecraft PC exit popup Window</figcaption>
-        </figure>
-        <figure>
-            <img src="PSPopUp.png" alt="Ps popup" width="300" />
-            <figcaption>Figure 2: Photoshop Auto-Save Window</figcaption>
-        </figure>
-        <figure>
-            <img src="WordPopUp.png" alt="Word popup" width="300" />
-            <figcaption>Figure 3: Microsoft Word Auto-save Window</figcaption>
-        </figure>
-
-        <div class="reflection">
-            <p><strong>Reflection:</strong></p>
-            <p>1. Exit application popups vary in complexity across different applications. In Minecraft (PC), the exit popup includes multiple settings and graphics options, requiring both mouse and keyboard interactions for navigation. Word features a simple "Save" or "Don't Save" exit popup, though selecting a save location adds some complexity. Photoshop presents a straightforward "Yes," "No," or "Cancel" dialog, navigable via mouse or keyboard. All three applications allow interaction through multiple input methods, though complexity varies depending on the task.</p>
-
-            <p>2. In Minecraft (PC), Photoshop, and Word, exit popups rely on both the mouse and keyboard for navigation, with arrow keys and Enter used for selection. However, there is no drag-and-drop functionality. In Photoshop and Word, the exit pop-up appears when clicking the X button on the screen. While there is a keyboard shortcut (Ctrl + F4) to close the application, it is not commonly used or easily remembered. In contrast, Minecraft (PC) allows users to access the exit popup menu only by pressing the Esc key, making it a more straightforward and intuitive shortcut for exiting the game.</p>
-
-            <p>3. In terms of learnability, the Minecraft (PC) exit popup becomes more intuitive with familiarity, though the complexity increases with advanced settings. Word’s simple popups are easy to understand, with the save location dropdown adding minor complexity. Photoshop’s popups are clear and efficient.</p>
-
-            <p>4. Regarding accessibility, Minecraft (PC) and Word support both mouse and keyboard navigation, with Minecraft requiring more steps for menu navigation and Photoshop offering precise control for detailed settings. Photoshop provides the most accessible experience with simple, efficient popups – with only 3 options – that support both input methods.</p>
-        </div>
-        <figure>
-            <img src="Part2.1.png" alt="Input Table" width="300" />
-        </figure>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accessible Components</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
     
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            font-family: 'Courier Prime', monospace;
+            color: #2e2e2e;
+        }
+    
+        header {
+            background-color: #222930;
+            width: 100%;
+            padding: 70px 0;
+            text-align: center;
+        }
+    
+        .title {
+            font-family: 'Courier New', monospace;
+            font-size: 90px;
+            color: white;
+            margin: 0;
+            letter-spacing: 4px;
+            font-weight: normal;
+        }
+    
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+    
+        h1, h2, h3, h4 {
+            color: #444;
+            font-weight: 500;
+        }
+    
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        figure {
+            margin: 2rem 0;
+        }
+    
+        figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+        }
+    
+        .reflection, ul {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    
+        .image-container img {
+            width: 45%;
+            min-width: 250px;
+        }
+    </style>       
+</head>
+<body>
+    <header>
+        <h1 class="title">RUCHI UKHADE</h1>
+    </header>
 
-        <h2>Part 2: Output</h2>
-        <figure>
-            <img src="Part2.2.png" alt="Output Table" width="300" />
-        </figure>
-        <h3>Focus Order Considerations:</h3>
-        <p> Minecraft (PC): Exit popup is entirely driven by arrow keys and the Enter key, with clicking sounds when a button is selected. Focus order follows the navigation of the popup options.</p>
-        <p> Photoshop: Mouse-driven and keyboard navigation through menu.</p>
-        <p> Word: Mouse-driven, accessible with the keyboard</p>
+    <main>
+    <h1>"Exit the application" popup box in Minecraft, Photoshop, Word</h1>
+    <h4>CS1300</h4>
 
-        <h2>Part 3: State Models & Component Redesign</h2>
-        <h4>These state models explore the experience of mouse and keyboard users separately.</h4>
+    <h2>Part 1: Input</h2>
+    <figure>
+        <img src="MinecraftPopUp.png" alt="Minecraft popup" />
+        <figcaption>Figure 1: Minecraft PC exit popup Window</figcaption>
+    </figure>
+    <figure>
+        <img src="PSPopUp.png" alt="Photoshop popup" />
+        <figcaption>Figure 2: Photoshop Auto-Save Window</figcaption>
+    </figure>
+    <figure>
+        <img src="WordPopUp.png" alt="Word popup" />
+        <figcaption>Figure 3: Microsoft Word Auto-save Window</figcaption>
+    </figure>
 
-        <!-- Container for images to appear side by side -->
-        <div class="image-container">
-            <img src="StateModel1.png" alt="Initial Models" width="300" />
-            <img src="StateModel2.png" alt="Revised Models" width="300" />
-        </div>
+    <div class="reflection">
+        <p><strong>Reflection:</strong></p>
+        <p>1. Exit application popups vary in complexity across applications. Minecraft uses both mouse and keyboard with more complexity, Word and Photoshop offer simpler options. </p>
+        <p>2. Minecraft requires the Esc key; Photoshop and Word use mouse clicks or keyboard shortcuts. Navigation in Minecraft is more intuitive.</p>
+        <p>3. Minecraft's UI becomes easier with use but remains complex. Word and Photoshop are straightforward and user-friendly.</p>
+        <p>4. Photoshop is the most accessible, with clearly labeled buttons and fewer distractions. Minecraft’s complexity can pose challenges.</p>
+    </div>
 
-        <h3>Minecraft Exit Popup Component Redesign</h3>
-        <img src="Final1.png" alt="Initial Componet" width="300" />
-        <img src="Final2.png" alt="Initial Componet"/>
+    <figure>
+        <img src="Part2.1.png" alt="Input Table" />
+    </figure>
 
+    <h2>Part 2: Output</h2>
+    <figure>
+        <img src="Part2.2.png" alt="Output Table" />
+    </figure>
 
-        <h2>Part 4: Reflection</h2>
-        <ul>
-            <li>The original Minecraft exit popup had too many options, making navigation difficult for keyboard-only users (arrow keys + Enter).</li>
-            <li>Photoshop and Word had clearer button labels and keyboard shortcuts but lacked strong focus indicators.</li>
-            <li>I redesigned the Minecraft popup to show only three main options: “Back to Game,” “Settings,” and “Exit to Menu,” reducing cognitive load.</li>
-            <li>Selecting “Settings” reveals additional options, keeping the main menu simple.</li>
-            <li>Added a visual highlight to show which button is selected, improving usability for low-vision users.</li>
-            <li>These changes make the interface more efficient and accessible, especially for motor-impaired and screen reader users.</li>
-            <li>Prioritizing keyboard navigation ensures users who cannot use a mouse can still interact easily.</li>
-            <li>My redesign solves a mismatch by simplifying navigation for motor-impaired and low-vision users, making the Minecraft exit popup clearer and more intuitive.
-                By reducing options to just three core choices and adding a visual highlight for selected buttons, the interface becomes easier for low-vision users to navigate.
-                Prioritizing keyboard navigation instead of relying on the mouse makes the popup more accessible for users with motor impairments, improving usability without sacrificing functionality.</li>
-        </ul>
+    <h3>Focus Order Considerations:</h3>
+    <p>Minecraft: Navigation through arrow keys and Enter; includes sound cues.</p>
+    <p>Photoshop: Menu navigation via mouse or keyboard.</p>
+    <p>Word: Fully navigable with mouse and keyboard.</p>
 
-	</body>
+    <h2>Part 3: State Models & Component Redesign</h2>
+    <h4>Exploring the experience of mouse vs keyboard users.</h4>
+
+    <div class="image-container">
+        <img src="StateModel1.png" alt="Initial Models" />
+        <img src="StateModel2.png" alt="Revised Models" />
+    </div>
+
+    <h3>Minecraft Exit Popup Redesign</h3>
+    <div class="image-container">
+        <img src="Final1.png" alt="Component Redesign" />
+        <img src="Final2.png" alt="Component Redesign" />
+    </div>
+
+    <h2>Part 4: Reflection</h2>
+    <ul>
+        <li>Original popup was cluttered; difficult for keyboard-only users.</li>
+        <li>Redesign reduced options to three core buttons.</li>
+        <li>“Settings” expands for advanced options, decluttering the main menu.</li>
+        <li>Highlight effect improves focus visibility for low-vision users.</li>
+        <li>Better keyboard accessibility benefits motor-impaired users.</li>
+        <li>Simplified layout makes the UI more intuitive and inclusive.</li>
+    </ul>
+    </main>
+</body>
 </html>
